@@ -23,7 +23,7 @@ Follow the [flask python installation instructions](https://flask.palletsproject
 ### Linux/MacOS installation
 
 ```shell
-$ mkdir myproject
+$ mkdir myproject   
 $ cd myproject
 $ python3 -m venv .venv
 # Activate the enviroment
