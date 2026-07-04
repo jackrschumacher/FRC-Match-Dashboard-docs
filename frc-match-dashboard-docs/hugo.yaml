@@ -13,14 +13,14 @@ outputs:
   page: [html, markdown]
   section: [html, rss, markdown]
 params:
-  favicon: /favicon-96x96.png
+  # favicon: /favicon-96x96.png
   description: "FRC Match Dashboard Documentation"
   navbar:
     displayLogo: true
-    logo:
-      path: favicon-96x96.png   # Path relative to 'static'
-      width: 25                  # Adjust size as needed
-      height: 25
+    # logo:
+    #   path: favicon-96x96.png   # Path relative to 'static'
+    #   width: 25                  # Adjust size as needed
+    #   height: 25
   # banner:
     # key: "announcement"
     # message: This site has recently been migrated to Hugo. Report issues [here](https://github.com/jackrschumacher/website/issues)
@@ -77,12 +77,12 @@ menu:
         type: search
       weight: 80
 
-    - name: GitHub 
-      url: ""
-      weight: 90
-      params: 
-        icon: github
-        type: icon
+    # - name: GitHub 
+    #    url: ""
+    #   weight: 90
+    #   params: 
+    #     icon: github
+    #     type: icon
       
     - name: Theme
       params:

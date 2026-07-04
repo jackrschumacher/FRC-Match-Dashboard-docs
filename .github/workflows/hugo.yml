@@ -1,0 +1,74 @@
+name: Deploy Hugo site to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+defaults:
+  run:
+    working-directory: frc-match-dashboard-docs
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Read Hugo version from .hvm
+        id: hvm
+        run: |
+          HVM_CONTENTS="$(cat .hvm)"
+          HUGO_VERSION="${HVM_CONTENTS%%/*}"
+          HUGO_VERSION="${HUGO_VERSION#v}"
+          HUGO_EDITION="${HVM_CONTENTS##*/}"
+          echo "version=${HUGO_VERSION}" >> "$GITHUB_OUTPUT"
+          echo "edition=${HUGO_EDITION}" >> "$GITHUB_OUTPUT"
+      - name: Install Hugo CLI
+        run: |
+          if [ "${{ steps.hvm.outputs.edition }}" = "extended" ]; then
+            ASSET="hugo_extended_${{ steps.hvm.outputs.version }}_linux-amd64.deb"
+          else
+            ASSET="hugo_${{ steps.hvm.outputs.version }}_linux-amd64.deb"
+          fi
+          curl -sSL "https://github.com/gohugoio/hugo/releases/download/v${{ steps.hvm.outputs.version }}/${ASSET}" -o /tmp/hugo.deb
+          sudo dpkg -i /tmp/hugo.deb
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "stable"
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Build with Hugo
+        run: |
+          hugo \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: training-app-docs/public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
