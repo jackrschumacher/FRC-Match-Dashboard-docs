@@ -60,7 +60,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: training-app-docs/public
+          path: frc-match-dashboard-docs/public
 
   deploy:
     environment:
