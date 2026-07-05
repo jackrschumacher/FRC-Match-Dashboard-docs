@@ -25,7 +25,7 @@ params:
     # key: "announcement"
     # message: This site has recently been migrated to Hugo. Report issues [here](https://github.com/jackrschumacher/website/issues)
   footer:
-    enable: true
+    enable: false
     displayCopyright: true
     displayPoweredBy: false
     width: normal
@@ -52,9 +52,9 @@ params:
 menu:
   main:
    
-    # - name: Docs
-    #   pageRef: /docs
-    #   weight: 1
+    - name: Documentation
+      pageRef: /docs
+      weight: 1
 
   
     # - name: Archive
@@ -77,12 +77,12 @@ menu:
         type: search
       weight: 80
 
-    # - name: GitHub 
-    #    url: ""
-    #   weight: 90
-    #   params: 
-    #     icon: github
-    #     type: icon
+    - name: GitHub 
+      url: "https://github.com/FRC930/FRC-Match-dashboard"
+      weight: 90
+      params: 
+        icon: github
+        type: icon
       
     - name: Theme
       params:
