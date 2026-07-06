@@ -5,26 +5,45 @@ weight: 2
 
 ## Active match info
 
+### Read APIs
+
+#### Active Match
+
 *Provides alliance team numbers, individual EPAs, live scores, and predicted alliance total EPAs.*
 
 ```
 http://[device-ip]:5000/api/active_match.json
 ```
 
-## Single team 
+#### Single team 
 
 ```
-http://[device-ip]/api/team_profile/[team].json
+http://[device-ip]/api/team.json
 ```
 
-## Head to head
+#### Head to head
 
 ```
 http://[device-ip]:5000/api/h2h.json
 ```
 
-## Rankings
+#### Rankings
 
 ```
+http://[device-ip]:5000/api/rankings.json
+```
+
+### Edit APIs
+
+#### Edit team 
+
+```
+http://[device-ip]:5000/api/edit/team
+```
+
+#### Edit match title
+
+```
+http://[device-ip]:5000/api/edit/match_title
 ```
 
