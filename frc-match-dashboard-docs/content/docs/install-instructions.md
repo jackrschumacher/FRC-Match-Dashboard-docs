@@ -14,17 +14,17 @@ Follow the [flask python installation instructions](https://flask.palletsproject
 #### Create the environment
 
 ```powershell
-> mkdir frc-match-dashboard
-> cd frc-match-dashboard
-> py -3 -m venv .venv
+mkdir frc-match-dashboard
+cd frc-match-dashboard
+py -3 -m venv .venv
 ```
 
 #### Activate the environment
 
 ```powershell
 # Activate the enviroment
-> .venv\Scripts\activate
-> pip install -r requirements.txt
+.venv\Scripts\activate
+pip install -r requirements.txt
 ```
 
 

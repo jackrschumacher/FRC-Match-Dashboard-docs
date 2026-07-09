@@ -1,6 +1,6 @@
 ---
 title: Endpoints
-weight: 2
+weight: 3
 ---
 
 ## Active match info
