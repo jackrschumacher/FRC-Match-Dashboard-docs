@@ -9,7 +9,7 @@ weight: 2
 
 > [!WARNING]
 >
-> While the dashboard is able to be used with both Windows and Linux in a testing capacity, this project only contains the packages for a production deployment on Linux. 
+> While the dashboard is able to be used with both Windows and Linux in a testing capacity, this project only contains the packages for a production deployment on Linux at this time.
 
 ## Running on Windows
 
@@ -27,7 +27,17 @@ python app.py
 
 ### Running as a development server
 
+```shell
+# Run the development server
+python app.py
+```
+
 
 
 ### Running as a production server
+
+```shell
+# Run the production server
+gunicorn -w 1 -b 0.0.0.0:5000 app:app
+```
 
