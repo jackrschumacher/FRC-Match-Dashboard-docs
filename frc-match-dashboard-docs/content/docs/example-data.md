@@ -5,7 +5,7 @@ weight: 4
 
 > [!NOTE]
 >
-> The example data shown on this page is from the `wicmp` event
+> The example data shown on this page is from the `2026wicmp` event
 
 
 {{< details title="Active Match" closed="true" >}}
