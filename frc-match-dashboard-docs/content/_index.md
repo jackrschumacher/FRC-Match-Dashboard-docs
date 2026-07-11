@@ -6,5 +6,6 @@ Welcome to the FRC-Match-dashboard documentation.
 {{< card link="docs/install-instructions" title="Installation Instructions" icon="cursor-click" >}}
 {{< card link="docs/running" title="Running the dashboard" icon="chevron-right" >}}
 {{< card link="docs/endpoints" title="Endpoints" icon="link" >}}
+{{< card link="docs/example-data" title="Example Data" icon="table" >}}
 
 {{< /cards >}}
