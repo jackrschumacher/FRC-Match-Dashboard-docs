@@ -17,6 +17,18 @@ params:
   favicon: /favicon.ico
   description: "FRC Match Dashboard Documentation"
   displayUpdatedAuthor: true
+  comments:
+    enable: true
+    type: giscus
+
+    giscus:
+      repo: "jackrschumacher/FRC-Match-Dashboard-docs"
+      repoId: "R_kgDOTL-rWw"
+      category: "Docs comments"
+      categoryId: "DIC_kwDOTL-rW84DA8Ch"
+      mapping: "title"
+      inputPosition: "top"
+      reactionsEnabled: 0
   navbar:
     displayLogo: true
     logo:

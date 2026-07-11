@@ -1,6 +1,7 @@
 ---
 title: Running the dashboard
 weight: 2
+description: "Running FRC Match Dashboard"
 ---
 
 > [!IMPORTANT]

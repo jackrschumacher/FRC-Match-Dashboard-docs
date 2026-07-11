@@ -1,6 +1,7 @@
 ---
 title: Installation and Setup Instructions
 weight: 1
+description: "FRC Dashboard Installation and Setup instructions"
 ---
 
 ## pip packages installation

@@ -1,6 +1,7 @@
 ---
 title: Endpoints
 weight: 3
+description: "FRC Dashboard endpoints"
 ---
 
 ## Active match info

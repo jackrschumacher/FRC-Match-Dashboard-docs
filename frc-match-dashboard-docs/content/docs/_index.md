@@ -5,9 +5,11 @@ cascade:
 ---
 FRC Match Dashboard Documentation
 
-{{< cards cols = "2">}}
+{{< cards cols = "3">}}
 
 {{< card link="install-instructions" title="Installation Instructions" icon="cursor-click" >}}
+{{< card link="running" title="Running the dashboard" icon="chevron-right" >}}
 {{< card link="endpoints" title="Endpoints" icon="link" >}}
+
 
 {{< /cards >}}
