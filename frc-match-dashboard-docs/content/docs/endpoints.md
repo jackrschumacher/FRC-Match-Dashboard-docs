@@ -6,6 +6,12 @@ description: "FRC Dashboard endpoints"
 
 ## Active match info
 
+> [!NOTE]
+>
+> For local development, the address will be `http://localhost:5000/` or `http://localhost:5000/` or replace localhost with your device IP.
+>
+> For production deployments, the address will be `http://[device IP]:5000`
+
 ### Read APIs
 
 #### Active Match
