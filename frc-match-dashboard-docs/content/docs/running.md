@@ -33,12 +33,47 @@ python app.py
 python app.py
 ```
 
-
-
 ### Running as a production server
 
 ```shell
 # Run the production server
 gunicorn -w 1 -b 0.0.0.0:5000 app:app
+```
+
+### Run under systemd with gunicorn
+
+Create the service at the path `/etc/systemd/system/frc-dashboard.service`
+
+```shell
+[Unit]
+Description=FRC Match Dashboard
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/FRC-Match-dashboard
+ExecStart=/home/pi/FRC-Match-dashboard/venv/bin/gunicorn -w 1 --timeout 120 -b 0.0.0.0:5000 app:app
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Register the service:
+
+```shell
+sudo systemctl daemon-reload
+sudo systemctl start frc-dashboard
+sudo systemctl status frc-dashboard
+```
+
+Start the service:
+
+```shell
+sudo systemctl start frc-dashboard    # Start the service
+sudo systemctl stop frc-dashboard     # Stop the service
 ```
 
