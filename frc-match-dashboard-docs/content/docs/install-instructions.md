@@ -65,6 +65,8 @@ Follow the steps below to create a TBA Read API v3 key. To create a TBA API key,
 To ensure that your TBA key is only known to you, you must add your TBA API key to the `.env` file in the projects root directory. Your `.env` file should look like this:
 
 ```
-TBA_API=[INSERT ]
+TBA_API=[INSERT TBA API KEY]
 ```
+
+
 
