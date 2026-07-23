@@ -65,10 +65,15 @@ params:
       links:     
 menu:
   main:
-   
-    - name: Documentation
-      pageRef: /docs
+    - name: Installation
+      pageRef: /docs/install-instructions
       weight: 1
+    - name: Running
+      pageRef: /docs/running
+      weight: 2
+    - name: Endpoints
+      pageRef: /docs/endpoints
+      weight: 3
 
   
     # - name: Archive
