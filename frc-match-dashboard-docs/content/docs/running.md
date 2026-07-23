@@ -42,7 +42,7 @@ gunicorn -w 1 -b 0.0.0.0:5000 app:app
 
 ### Run under systemd with gunicorn
 
-Create the service at the path `/etc/systemd/system/frc-dashboard.service`
+Create the service at the path `/etc/systemd/system/frc-dashboard.service`. You may need to change the paths to files depending on your setup.
 
 ```shell
 [Unit]
@@ -52,15 +52,16 @@ Wants=network-online.target
 
 [Service]
 Type=simple
-User=pi
-WorkingDirectory=/home/pi/FRC-Match-dashboard
-ExecStart=/home/pi/FRC-Match-dashboard/venv/bin/gunicorn -w 1 --timeout 120 -b 0.0.0.0:5000 app:app
+User=[INSERT USER]
+WorkingDirectory=/home/[USER]/FRC-Match-dashboard
+ExecStart=/home/[USER]/FRC-Match-dashboard/venv/bin/gunicorn -w 1 --timeout 500 -b 0.0.0.0:5000 app:app 
 Restart=always
 RestartSec=3
 
 [Install]
 WantedBy=multi-user.target
 ```
+
 
 Register the service:
 
