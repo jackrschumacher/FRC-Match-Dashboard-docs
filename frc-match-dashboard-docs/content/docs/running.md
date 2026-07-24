@@ -54,7 +54,8 @@ Wants=network-online.target
 Type=simple
 User=[INSERT USER]
 WorkingDirectory=/home/[USER]/FRC-Match-dashboard
-ExecStart=/home/[USER]/FRC-Match-dashboard/venv/bin/gunicorn -w 1 --timeout 500 -b 0.0.0.0:5000 app:app 
+ExecStart=/home/[USER]/FRC-Match-dashboard/venv/bin/gunicorn -w 1 --threads 4 --timeout 500 -b 0.0.0.0:5000 app:app 
+Environment=SCORE_POLL_SECONDS=60
 Restart=always
 RestartSec=3
 
@@ -62,8 +63,11 @@ RestartSec=3
 WantedBy=multi-user.target
 ```
 
-
 Register the service:
+
+> [!IMPORTANT]
+>
+> Make sure to run the follow commands as sudo
 
 ```shell
 sudo systemctl daemon-reload
